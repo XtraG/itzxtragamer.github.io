@@ -1,0 +1,180 @@
+l<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Xtra" property="og:title" />
+    <meta content="fri bobux hir :DDDD" property="og:description" />
+    <meta content="#7f54e3" data-react-helmet="true" name="theme-color" />
+    <meta content="https://xrbi.netlify.app/images/profileImage.png" property="og:image" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/profileImage-circle.png" type="image/x-icon">
+    <title>Xtra</title>
+    <style>
+        /* Shifting Text Section */
+        .background {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            background-image: url('3.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(3rem, 10vw, 10rem);
+            color: white;
+            padding: 0rem clamp(1rem, 2vw, 3rem);
+            border-radius: clamp(0.4rem, 0.75vw, 1rem);
+            cursor: pointer;
+        }
+
+        h1:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Main Page Section */
+        .content {
+            display: none; /* Initially hide the main page section */
+            /* Your existing styles for the main page content */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <!-- Shifting Text Section -->
+        <div class="background">
+            <h1 data-value="XTRA">XTRA</h1>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let interval = null;
+
+        document.querySelector("h1").addEventListener("mouseover", event => {
+            let iteration = 0;
+            clearInterval(interval);
+
+            interval = setInterval(() => {
+                event.target.innerText = event.target.innerText
+                    .split("")
+                    .map((letter, index) => {
+                        if (index < iteration) {
+                            return event.target.dataset.value[index];
+                        }
+
+                        return letters[Math.floor(Math.random() * 26)];
+                    })
+                    .join("");
+
+                if (iteration >= event.target.dataset.value.length) {
+                    clearInterval(interval);
+                }
+
+                iteration += 1 / 3;
+            }, 500);
+        });
+
+        document.querySelector("h1").addEventListener("click", () => {
+            // Hide the shifting text section
+            document.querySelector(".background").style.display = "none";
+
+            // Show the main page section
+            document.querySelector(".content").style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Xtra" property="og:title" />
+    <meta content="fri bobux hir :DDDD" property="og:description" />
+    <meta content="#7f54e3" data-react-helmet="true" name="theme-color" />
+    <meta content="https://xrbi.netlify.app/images/profileImage.png" property="og:image" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/profileImage-circle.png" type="image/x-icon">
+    <title>Xtra</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <ul>
+                <li class="active"><a href="https://itzxtra.top">Home</a></li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <div class="banner">
+                <img src="./images/lofifuture.gif" class="banner-image">
+            </div>
+            <div class="general">
+                <div class="aal">
+                    <img src="images/profileImage.gif" class="pfp">
+                    <div class="links">
+                        <div class="tooltip-content">
+                            <a href="https://discord.com/users/670392927024840714" target="_blank" class="contact-content-info link">
+                                <div>
+                                    <box-icon name='discord-alt' type='logo' color='var(--blue)'></box-icon>
+                                </div>
+                            </a>
+                            <div class="tooltip tooltip-top">Discord</div>
+                        </div>
+                        <div class="tooltip-content">
+                            <a 
+                           
+                            <a href="https://github.com/XtraG" target="_blank" class="contact-content-info link">
+                                <div>
+                                    <box-icon name='github' type='logo' color='#ffffff'></box-icon>
+                                </div>
+                            </a>
+                            <div class="tooltip tooltip-top" style="margin-left: -30px;">GitHub</div>
+                        </div>
+                        <div class="tooltip-content">
+                            <a href="https://www.youtube.com/channel/UC4FMh8wmK95E791-gKJlk4Q" target="_blank" class="contact-content-info link">
+                                <div>
+                                    <box-icon name='youtube' type='logo' color='var(--light-red)'></box-icon>
+                                </div>
+                            </a>
+                            <div class="tooltip tooltip-top">YouTube</div>
+                        </div>
+                        <div class="tooltip-content">
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="informations">
+                    <span class="head">
+                    <img src="images/crown.png" class="crown">
+                    <h1 class="name">Xtra</h1>
+                    <div class="tooltip-content">
+                        <h2 id="status" class="status pulse"></h2>
+                        <div class="tooltip tooltip-top" style="margin-left: -50px;" id="status-text"></div>
+                    </div>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/0x5841524f4e/js-lanyard/lanyard.js"></script>
+<script src="script.js"></script>
+
+</html>
